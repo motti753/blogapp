@@ -1,26 +1,19 @@
-@use 'variables' as var;
-
-$avatar-size: 40px;
-$header-padding-y: 16px;
-
 .header {
   display: flex;
   justify-content: space-between;
-  background-color: var.$primary-color;
-  padding: $header-padding-y 16px;
+  background-color: #8AC542;
+  padding: 16px 16px;
   font-weight: bold;
-
-  &_pageTitle {
-    color: white;
-    line-height: $avatar-size;
-    font-size: var.$font-lg;
-  }
-
-  &_avatar {
-    width: $avatar-size;
-    height: $avatar-size;
-    border-radius: 100%;
-  }
+}
+.header_pageTitle {
+  color: white;
+  line-height: 40px;
+  font-size: 22px;
+}
+.header_avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
 }
 
 .dropbtn {
@@ -47,7 +40,7 @@ $header-padding-y: 16px;
   padding: 8px 16px;
   text-decoration: none;
   display: block;
-  color: var.$text-base-color;
+  color: #616161;
 }
 
 .dropdown-content a:hover {
@@ -57,3 +50,4 @@ $header-padding-y: 16px;
 .dropdown:hover .dropdown-content {
   display: block;
 }
+/*# sourceMappingURL=header.css.map */

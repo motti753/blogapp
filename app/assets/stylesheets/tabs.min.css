@@ -1,0 +1,2 @@
+.tabs{display:flex;box-shadow:0px 4px 10px rgba(0,0,0,.25);justify-content:space-around}.tabs_item{padding:16px 0px;background-color:#fff;width:100%;text-align:center;cursor:pointer}.tabs_item.active{background-color:#8ac542;color:#fff}.tabs_item:hover{opacity:.9}
+/*# sourceMappingURL=tabs.min.css.map */
