@@ -1,0 +1,19 @@
+input.text {
+  padding: 16px 24px;
+  width: 100%;
+  margin: 8px 0px;
+  border: 1px solid #EBEBEB;
+}
+
+label {
+  font-size: 12px;
+}
+
+textarea {
+  min-height: 440px;
+  resize: vertical;
+  width: 100%;
+  margin: 8px 0px;
+  border: 1px solid #EBEBEB;
+}
+/*# sourceMappingURL=form.css.map */
