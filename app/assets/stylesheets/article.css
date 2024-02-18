@@ -1,7 +1,7 @@
 .article {
   background: #fff;
   margin: 16px;
-  padding: 16px;
+  padding: 20px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   position: relative;
 }
@@ -10,15 +10,20 @@
 }
 .article_detail {
   padding-top: 10px;
-  cursor: pointer;
   display: flex;
   font-size: 12px;
+  position: relative;
 }
 .article_detail img {
   width: 32px;
   height: 32px;
+  cursor: pointer;
   border-radius: 100%;
   margin-right: 16px;
+}
+.article_detail_actions {
+  right: 0px;
+  position: absolute;
 }
 .article_content {
   padding: 24px 0 32px;

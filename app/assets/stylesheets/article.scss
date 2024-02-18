@@ -4,7 +4,7 @@ $avatar-size: 32px;
 .article {
   background: #fff;
   margin: 16px;
-  padding: 16px;
+  padding: 20px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   position: relative;
 
@@ -14,15 +14,21 @@ $avatar-size: 32px;
 
   &_detail {
     padding-top: 10px;
-    cursor: pointer;
     display: flex;
     font-size: 12px;
+    position: relative;
 
     img {
       width: $avatar-size;
       height: $avatar-size;
+      cursor: pointer;
       border-radius: 100%;
       margin-right: 16px;
+    }
+
+    &_actions {
+      right: 0px;
+      position: absolute;
     }
   }
 
