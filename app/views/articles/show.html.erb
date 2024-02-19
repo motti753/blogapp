@@ -8,6 +8,14 @@
       <p>cohki0305</p>
       <p>2024/02/14</p>
     </div>
+    <div class="article_detail_actions">
+      <div class="dropdown">
+        <%= image_tag 'actions.svg', class: 'dropbtn' %>
+          <div class="dropdown-content mini">
+            <%= link_to '編集する', edit_article_path(@article.id) %>
+          </div>
+      </div>
+    </div>
     <div class="article_content">
       <%= @article.content %>
     </div>
