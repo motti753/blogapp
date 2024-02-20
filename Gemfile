@@ -7,6 +7,14 @@ gem "rails", "~> 7.1.3"
 
 gem "sassc-rails"
 gem 'faker'
+#ESMとimportmapを使用して、トランスパイルやバンドルなしでRailsのモダンなJavaScriptを管理
+gem "importmap-rails"
+#JavaScriptを一切記述することなく、シングルページのWebアプリケーションのようなスピードを実現
+gem "turbo-rails"
+#あなたがすでに持っているHTMLのための控えめなJavaScriptフレームワーク
+gem "stimulus-rails"
+gem 'cssbundling-rails'
+gem 'jsbundling-rails'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
