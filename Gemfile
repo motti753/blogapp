@@ -13,6 +13,8 @@ gem "importmap-rails"
 gem "turbo-rails"
 #あなたがすでに持っているHTMLのための控えめなJavaScriptフレームワーク
 gem "stimulus-rails"
+gem 'cssbundling-rails'
+gem 'jsbundling-rails'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
