@@ -15,6 +15,7 @@ gem "turbo-rails"
 gem "stimulus-rails"
 gem 'cssbundling-rails'
 gem 'jsbundling-rails'
+gem 'rails-i18n'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
