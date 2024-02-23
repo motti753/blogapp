@@ -5,12 +5,12 @@ Rails.application.routes.draw do
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   # rootは'/'を指す。以下はget '/' => "home#index"と同義
   # root to: "home#index"
-  get "up" => "rails/health#show", as: :rails_health_check
-  get "/about" => "home#about"
+  get 'up' => 'rails/health#show', as: :rails_health_check
+  get '/about' => 'home#about'
 
   # Defines the root path route ("/")
   # root "posts#index"
-  root to: "articles#index"
+  root to: 'articles#index'
 
   # resources :articles
   resources :articles
