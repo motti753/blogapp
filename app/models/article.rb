@@ -17,7 +17,7 @@ class Article < ApplicationRecord
   # validates :content, length: {minimum: 10}
 
   # validate 独自のルール 単数系で宣言する
-  validate :validate_title_and_content_length
+  # validate :validate_title_and_content_length
 
   def display_created_at
     I18n.l(self.created_at, format: :long)

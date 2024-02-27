@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   # 記述した位置で処理を止める。ターミナル内で値確認ができる。抜けるにはexit
   # binding.pry
