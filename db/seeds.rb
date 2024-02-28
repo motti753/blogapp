@@ -7,9 +7,18 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+suzuran = User.create!(email: 'suzuran@gmail.com', password: 'password')
+tester = User.create!(email: 'tester@gmail.com', password: 'password')
 
-10.times do
-  Article.create(
+5.times do
+  suzuran.articles.create!(
+    title: Faker::Games::Pokemon.name,
+    content: Faker::Games::Pokemon.location
+  )
+end
+
+5.times do
+  tester.articles.create!(
     title: Faker::Games::Pokemon.name,
     content: Faker::Games::Pokemon.location
   )
