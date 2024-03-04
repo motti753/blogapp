@@ -15,5 +15,8 @@ Rails.application.routes.draw do
   root to: 'articles#index'
 
   # resources :articles
-  resources :articles
+  resources :articles do
+    # resources :articlesの中に「resources :comments」でURL「articles/id/new」となる
+    resources :comments, only: [:new, :create]
+  end
 end

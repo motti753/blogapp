@@ -7,4 +7,13 @@
   padding: 16px 0;
   font-weight: 700;
 }
+
+.btn-secondary {
+  background-color: #fff;
+  border: solid 1px #8AC542;
+  width: 100%;
+  text-align: center;
+  color: #8AC542;
+  padding: 1;
+}
 /*# sourceMappingURL=buttons.css.map */

@@ -9,8 +9,16 @@ $avatar-size: 32px;
   position: relative;
   height: 30%;
 
+  h2 {
+    font-size: 16px;
+  }
+
   &_title {
     font-size: 22px;
+  }
+
+  &_comment {
+    padding:  12px 0;
   }
 
   &_detail {

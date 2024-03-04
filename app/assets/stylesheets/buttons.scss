@@ -9,3 +9,13 @@
   padding: 16px 0;
   font-weight: 700;
 }
+
+.btn-secondary {
+  background-color: #fff;
+  border: solid 1px var.$primary-color;
+  width: 100%;
+  text-align: center;
+  color: var.$primary-color;
+  padding: 16px 0;
+  font-weight: bold;
+}
