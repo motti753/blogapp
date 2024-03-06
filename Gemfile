@@ -7,10 +7,6 @@ gem 'rails', '~> 7.1.3'
 
 gem 'faker'
 gem 'sassc-rails'
-#ESMとimportmapを使用して、トランスパイルやバンドルなしでRailsのモダンなJavaScriptを管理
-gem 'importmap-rails'
-#JavaScriptを一切記述することなく、シングルページのWebアプリケーションのようなスピードを実現
-gem 'turbo-rails'
 #あなたがすでに持っているHTMLのための控えめなJavaScriptフレームワーク
 gem 'annotate'
 gem 'better_errors'
@@ -18,10 +14,8 @@ gem 'binding_of_caller'
 gem 'cssbundling-rails'
 gem 'devise'
 gem 'hamlit'
-gem 'haml-rails'
 gem 'jsbundling-rails'
 gem 'rails-i18n'
-gem 'stimulus-rails'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
@@ -88,3 +82,5 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
 end
+
+gem "dartsass-rails", "~> 0.5.0"

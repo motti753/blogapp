@@ -19,4 +19,6 @@ Rails.application.routes.draw do
     # resources :articlesの中に「resources :comments」でURL「articles/id/new」となる
     resources :comments, only: [:new, :create]
   end
+
+  resource :profile, only: [:show, :edit, :update]
 end

@@ -23,6 +23,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   has_many :articles, dependent: :destroy
+  has_one :profile, dependent: :destroy
 
   def has_written?(article)
     articles.exists?(id: article.id)
@@ -30,5 +31,11 @@ class User < ApplicationRecord
 
   def display_name
     self.email.split('@').first
+  end
+
+  # ユーザに紐づくプロフィールがある場合、表示。
+  # ない場合、新たにレコードを作成する
+  def prepare_profile
+    profile || build_profile
   end
 end
