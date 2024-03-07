@@ -6,10 +6,10 @@
       .profilePage_user_name
         .profilePage_user_displayName
           = current_user.display_name
-        .profilePage_user_acionButton
+        .profilePage_user_actionButton
           = link_to 'Edit', edit_profile_path
-      .profilePage_user_indrofuction
+      .profilePage_user_introduction
         ああああああああああああああああああああ
 
-- current_user.articles.each do |article|
-  = render 'commons/article', article: article
+  - current_user.articles.each do |article|
+    = render 'commons/article', article: article
