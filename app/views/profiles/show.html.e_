@@ -1,7 +1,0 @@
-<div class='container profilePage'>
-  <div class="profilePage_user">
-    <div class="profilePage_user_image">
-      <%= image_tag 'default-avatar.png' %>
-    </div>
-  </div>
-</div>
