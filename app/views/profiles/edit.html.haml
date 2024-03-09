@@ -5,6 +5,10 @@
 
   = form_with(model: @profile, url: profile_path, method: 'put', local: true) do |f|
     %div
+      = f.label :avatar, 'アバター'
+    %div
+      = f.file_field :avatar
+    %div
       = f.label :nickname, 'ハンドルネーム'
     %div
       = f.text_field :nickname, class: 'text'
@@ -15,11 +19,17 @@
     %div
       = f.label :gender, '性別'
     %div
-      = f.select :gender, Profile.genders.keys, {}, {class: 'text'}
-      -# ハッシュのみ取得
-      -# = f.select :gender, Profile.genders.keys
-      -# 配列で選択肢を渡す
-      -# = f.select :gender, ['male', 'female', 'other']
+      -# selectの後は配列を渡している。
+      -# [['男性', 'male'], ['女性', 'female'], ['その他', 'other']]
+      -# = f.select :gender, [['男性', 'male'], ['女性', 'female'], ['その他', 'other']], {}, {class: 'text'}
+
+      -# = f.select :gender, Profile.genders.map { |k, v| [
+      -#     -- 処理　keyをI18nに渡すことでenum.ymlに定義している「male,female,other」の右側を取ってくる --
+      -#     I18n.t("enum.genders.#{k}"), k
+      -#   ]}, {}, {class: 'text'}
+      = f.select :gender, Profile.genders.map { |k, v| [I18n.t("enum.genders.#{k}"), k]}, {}, {class: 'text'}
+
+      -# = f.select :gender, Profile.genders.keys, {}, {class: 'text'}
     %div
       = f.label :birthday, '生年月日'
     %div
