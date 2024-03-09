@@ -6,22 +6,19 @@ ruby '3.2.2'
 gem 'rails', '~> 7.1.3'
 
 gem 'faker'
-gem 'sassc-rails'
-#ESMとimportmapを使用して、トランスパイルやバンドルなしでRailsのモダンなJavaScriptを管理
-gem 'importmap-rails'
-#JavaScriptを一切記述することなく、シングルページのWebアプリケーションのようなスピードを実現
-gem 'turbo-rails'
+# gem 'sassc-rails'
 #あなたがすでに持っているHTMLのための控えめなJavaScriptフレームワーク
 gem 'annotate'
 gem 'better_errors'
 gem 'binding_of_caller'
-gem 'cssbundling-rails'
+# gem 'cssbundling-rails'
 gem 'devise'
+gem 'foreman'
 gem 'hamlit'
 gem 'haml-rails'
-gem 'jsbundling-rails'
+# gem 'jsbundling-rails'
 gem 'rails-i18n'
-gem 'stimulus-rails'
+gem 'webpacker'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
@@ -34,6 +31,7 @@ gem 'puma', '>= 5.0'
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem 'importmap-rails'
+
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem 'turbo-rails'
@@ -88,3 +86,5 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
 end
+
+gem "dartsass-rails", "~> 0.5.0"
