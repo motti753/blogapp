@@ -24,6 +24,7 @@ class User < ApplicationRecord
   
   has_many :articles, dependent: :destroy
   has_one :profile, dependent: :destroy
+  has_many :likes, dependent: :destroy
 
   # 指定テーブルのカラムを取ってくる。def メソッドの定義が不要になる。
   # delegate :カラム名①, :カラム名②, to: :テーブル名, allow_nil: true
