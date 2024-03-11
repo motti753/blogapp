@@ -24,6 +24,10 @@ class User < ApplicationRecord
   
   has_many :articles, dependent: :destroy
   has_one :profile, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  # has_many :代替え名, through: :中間テーブル, source: :代替え名のテーブル
+  # 上記でuserテーブルからlikesテーブルをスルーしてarticleレコードを取得できる
+  has_many :favorite_articles, through: :likes, source: :article
 
   # 指定テーブルのカラムを取ってくる。def メソッドの定義が不要になる。
   # delegate :カラム名①, :カラム名②, to: :テーブル名, allow_nil: true
@@ -31,6 +35,10 @@ class User < ApplicationRecord
 
   def has_written?(article)
     articles.exists?(id: article.id)
+  end
+
+  def has_liked?(article)
+    likes.exists?(article_id: article.id)
   end
 
   def display_name
