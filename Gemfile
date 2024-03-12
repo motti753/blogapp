@@ -19,6 +19,7 @@ gem 'haml-rails'
 # gem 'jsbundling-rails'
 gem 'rails-i18n'
 gem 'webpacker'
+gem 'aws-sdk-s3', require: false
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
@@ -65,6 +66,7 @@ group :development, :test do
   gem 'debug', platforms: %i[ mri windows ]
   gem 'pry-byebug'
   gem 'rubocop-rails'
+  gem 'dotenv-rails'
 end
 
 group :development do
