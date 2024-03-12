@@ -19,6 +19,7 @@ gem 'haml-rails'
 # gem 'jsbundling-rails'
 gem 'rails-i18n'
 gem 'webpacker'
+gem 'webpack'
 gem 'aws-sdk-s3', require: false
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
