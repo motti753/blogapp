@@ -70,6 +70,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'rubocop-rails'
   gem 'dotenv-rails'
+  gem 'derailed'
 end
 
 group :development do
@@ -88,8 +89,8 @@ end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem 'capybara'
-  gem 'selenium-webdriver'
+  # gem 'capybara'
+  # gem 'selenium-webdriver'
 end
 
 gem "dartsass-rails", "~> 0.5.0"
