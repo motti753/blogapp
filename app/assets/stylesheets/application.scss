@@ -2,12 +2,14 @@
 @use 'tabs';
 @use 'variables' as var;
 @use 'card';
-@use 'article';
 @use 'buttons';
 @use 'form' ;
 @use 'flash';
 @use 'common';
 @use 'profile';
+@use 'article';
+@use 'actiontext';
+@use 'trix/dist/trix.css';
 
 html {
   word-spacing: 1px;
