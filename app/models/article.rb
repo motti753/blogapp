@@ -13,11 +13,11 @@
 #  index_articles_on_user_id  (user_id)
 #
 class Article < ApplicationRecord
-  validates :title, presence: true, length: { minimum: 2, maximun: 100},
-  format: {with: /\A(?!\@)/}
+  # validates :title, presence: true, length: { minimum: 2, maximun: 100},
+  # format: {with: /\A(?!\@)/}
   # validates :title, length: { minimum: 2}
 
-  validates :content, presence: true, length: {minimum: 5}, uniqueness: true
+  # validates :content, presence: true, length: {minimum: 5}, uniqueness: true
   # validates :content, length: {minimum: 10}
 
   # validate 独自のルール 単数系で宣言する
@@ -27,7 +27,7 @@ class Article < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_one_attached :eyecatch
-  has_rick_text :content
+  has_rich_text :content
 
   def display_created_at
     I18n.l(self.created_at, format: :long)
