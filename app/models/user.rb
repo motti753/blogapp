@@ -29,6 +29,17 @@ class User < ApplicationRecord
   # 上記でuserテーブルからlikesテーブルをスルーしてarticleレコードを取得できる
   has_many :favorite_articles, through: :likes, source: :article
 
+  # 自分がフォローしている人を探し出す
+  # has_many :代替え名, foreign_key: 'カラム名', class_name: 'テーブル名', dependent: :destroy
+  has_many :following_relationships, foreign_key: 'follower_id', class_name: 'Relationship', dependent: :destroy
+  # user.followingsとすると、「自身のuser_id = follower_id」となっているレコードのfollowingカラムを取得する
+  has_many :followings, through: :following_relationships, source: :following
+
+  # 自分のフォロワーを探し出す
+  has_many :follower_relationships, foreign_key: 'following_id', class_name: 'Relationship', dependent: :destroy
+  # user.followingsとすると、「自身のuser_id = follower_id」となっているレコードのfollowingカラムを取得する
+  has_many :followers, through: :follower_relationships, source: :follower
+
   # 指定テーブルのカラムを取ってくる。def メソッドの定義が不要になる。
   # delegate :カラム名①, :カラム名②, to: :テーブル名, allow_nil: true
   delegate :birthday, :gender, :age, to: :profile, allow_nil: true
@@ -72,6 +83,30 @@ class User < ApplicationRecord
       profile.avatar
     else
       'default-avatar.png'
+    end
+  end
+
+  def follow!(user)
+    user_id = get_user_id(user)
+    following_relationships.create!(following_id: user_id)
+  end
+
+  def unfollow!(user)
+    user_id = get_user_id(user)
+    relation = following_relationships.find_by!(following_id: user_id)
+    relation.destroy!
+  end
+
+  def has_followed?(user)
+    following_relationships.exists?(following_id: user.id)
+  end
+
+  private
+  def get_user_id(user)
+    if user.is_a?(User)
+      user.id
+    else
+      user
     end
   end
 end
