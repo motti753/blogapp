@@ -7,8 +7,8 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-suzuran = User.create!(email: 'suzuran@gmail.com', password: 'password')
-tester = User.create!(email: 'tester@gmail.com', password: 'password')
+suzuran = User.find(1)
+tester = User.find(2)
 
 5.times do
   suzuran.articles.create!(
