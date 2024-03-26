@@ -29,18 +29,6 @@ class Article < ApplicationRecord
   has_one_attached :eyecatch
   has_rich_text :content
 
-  def display_created_at
-    I18n.l(self.created_at, format: :long)
-  end
-
-  def author_name
-    user.display_name
-  end
-
-  def like_count
-    likes.count
-  end
-
   private
   def validate_title_and_content_length
     char_count = self.title.length + self.content.length
