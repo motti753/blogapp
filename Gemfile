@@ -9,6 +9,7 @@ gem 'rails', '~> 7.1.3'
 #あなたがすでに持っているHTMLのための控えめなJavaScriptフレームワーク
 gem 'annotate'
 gem 'active_decorator'
+gem 'active_model_serializers'
 gem 'binding_of_caller'
 # gem 'cssbundling-rails'
 gem 'devise'

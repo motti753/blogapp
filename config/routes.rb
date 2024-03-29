@@ -10,6 +10,11 @@ Rails.application.routes.draw do
   get 'up' => 'rails/health#show', as: :rails_health_check
   get '/about' => 'home#about'
 
+  # application.html.hamlで"turbo_method: :destroy"を指定していてもnomethodErrorが出るため。
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
+
   # Defines the root path route ("/")
   # root "posts#index"
   root to: 'articles#index'
