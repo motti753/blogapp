@@ -9,10 +9,9 @@ import jquery from 'jquery'
 window.$ = jquery
 
 document.addEventListener('turbo:load', () => {
-  $('.article_title').on('click', () => {
-    axios.get('/')
-      .then((response) => {
-        console.log(response)
-      })
-  })
+  const articleId = document.getElementById('article-show').getAttribute('data-article-id')
+  axios.get(`/articles/${articleId}/like`)
+    .then((response) => {
+      console.log(response)
+    })
 })
