@@ -1,19 +1,12 @@
-import 'axios';
-
+// 'modules/axios.js'デフォルト設定を読み込み
+import axios from 'modules/axios';
 import jquery from 'jquery'
 window.$ = jquery
-
-// Token ------------------------------ //
-// axiosのrequest時にheadersにCSRF-Tokenを格納する
-axios.interceptors.request.use((config) => {
-  if(['post', 'put', 'patch', 'delete'].includes(config.method)) {
-    config.headers['X-CSRF-Token'] = $('meta[name="csrf-token"]').attr('content');
-  }
-  return config;
-}, (error) => {
-  return Promise.reject(error);
-});
-// Token ------------------------------ //
+// 'modules/handle_heart.js'のメソッドを読み込み
+import {
+  listenInactiveHeartEvent,
+  listenActiveHeartEvent
+}from '../modules/handle_heart'
 
 // like ------------------------------ //
 // article/show.html.hamlで非表示にしているheartをhas_likedの戻り値によって外す
@@ -82,36 +75,9 @@ document.addEventListener('turbo:load', () => {
       const hasLiked = response.data.hasLiked
       handleHeartDisplay(hasLiked)
     })
-  
-  $('.inactive-heart').on('click', () => {
-    axios.post(`/articles/${articleId}/like`)
-      .then((response) => {
-        console.log(response)
-        if (response.data.status == 'OK') {
-          $('.inactive-heart').addClass('hidden')
-          $('.active-heart').removeClass('hidden')
-        }
-      })
-      .catch((e) => {
-        window.alert('Error')
-        console.log(e)
-      })
-  })
-
-  $('.active-heart').on('click', () => {
-    axios.delete(`/articles/${articleId}/like`)
-      .then((response) => {
-        if (response.data.status == 'OK') {
-          $('.active-heart').addClass('hidden')
-          $('.inactive-heart').removeClass('hidden')
-        }
-        console.log(response)
-      })
-      .catch((e) => {
-        window.alert('Error')
-        console.log(e)
-      })
-  })
+  // heartをinactive, activeと切り替える
+  listenInactiveHeartEvent(articleId)
+  listenActiveHeartEvent(articleId)
   // like ------------------------------ //
 })
 

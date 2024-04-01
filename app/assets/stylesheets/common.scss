@@ -39,3 +39,8 @@
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+.comments-container {
+  overflow: scroll;
+  height: 100%;
+}
