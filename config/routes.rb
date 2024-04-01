@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   # resources :articles
   resources :articles do
     # resources :articlesの中に「resources :comments」でURL「articles/id/new」となる
-    resources :comments, only: [:new, :create]
+    resources :comments, only: [:index, :new, :create]
     resource :like, only: [:show, :create, :destroy]
   end
 

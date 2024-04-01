@@ -13,7 +13,8 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
-    @comments = @article.comments
+    # jsでコメント一覧を表示させるため、不要
+    # @comments = @article.comments
   end
 
   def new
