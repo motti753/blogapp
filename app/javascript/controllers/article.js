@@ -26,6 +26,18 @@ const handleHeartDisplay = (hasLiked) => {
 document.addEventListener('turbo:load', () => {
   const article = document.getElementById('article-show')
   const articleId = article.dataset.articleId
+
+  // comment一覧を表示
+  axios.get(`/articles/${articleId}/comments`)
+    .then((response) => {
+      const comments = response.data
+      comments.forEach((comment) => {
+        $('.comments-container').append(
+          `<div class='article_comment'><p>${comment.content}</p></div>`
+        )
+      })
+    })
+  
   axios.get(`/articles/${articleId}/like`)
     .then((response) => {
       const hasLiked = response.data.hasLiked
