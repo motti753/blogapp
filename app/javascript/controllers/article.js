@@ -24,7 +24,8 @@ const handleHeartDisplay = (hasLiked) => {
 }
 
 document.addEventListener('turbo:load', () => {
-  const articleId = document.getElementById('article-show').getAttribute('data-article-id')
+  const article = document.getElementById('article-show')
+  const articleId = article.dataset.articleId
   axios.get(`/articles/${articleId}/like`)
     .then((response) => {
       const hasLiked = response.data.hasLiked
