@@ -19,6 +19,9 @@ textarea, trix-editor {
   width: 100%;
   margin: 8px 0px;
   border: 1px solid $border-color;
+  &.sm {
+    min-height: 160px;
+  }
 }
 
 // .trix-content {
