@@ -87,6 +87,10 @@ group :development do
   # gem "spring"
   # gem 'spring-watcher-listen'
   gem 'erb2haml'
+  # メールを開くためのgem
+  gem 'letter_opener'
+  # ブラウザ上でメールの送信履歴を見るためのgem
+  gem 'letter_opener_web'
 end
 
 group :test do
