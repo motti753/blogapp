@@ -1,0 +1,6 @@
+:verbose: false
+:concurrency: 1
+# キューの設定。ここではデフォルトとメール用を作成
+:queues:
+  - default
+  - mailers

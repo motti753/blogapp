@@ -1,7 +1,13 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
   devise_for :users
   devise_for :models
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+
+  # development環境の場合、'/sidekiq'にアクセスするとジョブとキューの中身が確認きる
+  mount Sidekiq::Web => "/sidekiq" if Rails.env.development?
+
 
   # development環境の場合、'/letter_opener'にアクセスするとLetterOpenerWebの内容が確認きる
   mount LetterOpenerWeb::Engine, at:'/letter_opener' if Rails.env.development?
