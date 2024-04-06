@@ -22,6 +22,8 @@ gem 'rails-i18n'
 # gem 'webpacker'
 gem 'aws-sdk-s3', require: false
 gem "puma_worker_killer"
+gem 'sidekiq'
+gem 'sinatra', require: false
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'

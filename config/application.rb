@@ -16,6 +16,12 @@ module BlogApp
       # Dotenv::Railtie.load
     end
 
+    config.action_mailer.deliver_later_queue_name = nil # defaults to "mailers"
+    config.action_mailbox.queues.routing    = nil       # defaults to "action_mailbox_routing"
+    config.active_storage.queues.analysis   = nil       # defaults to "active_storage_analysis"
+    config.active_storage.queues.purge      = nil       # defaults to "active_storage_purge"
+    config.active_storage.queues.mirror     = nil
+
     # Please, add to the `ignore` list any other `lib` subdirectories that do
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
     # Common ones are `templates`, `generators`, or `middleware`, for example.
@@ -31,5 +37,6 @@ module BlogApp
 
     config.time_zone = 'Tokyo'
     config.i18n.default_locale = :ja
+    config.active_job.queue_adapter = :sidekiq
   end
 end
