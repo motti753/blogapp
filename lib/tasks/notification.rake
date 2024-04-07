@@ -1,7 +1,16 @@
 namespace :notification do
   desc '利用者にメールを送信する'
 
-  task :send_emails_from_admin do
-    puts '初めての　Rake task'
+  task :send_emails_from_admin, ['msg'] => :environment do |task, args|
+    msg = args['msg']
+    if msg.present?
+      NotificationFromAdminJob.perform_later(msg)
+    else
+      puts '送信できませんでした。メッセージを入力してください。etc. rails notification:send_emails_from_admin\[こんにちは\]'
+    end
   end
 end
+
+# ['msg'] => :environment
+# {msg: 'aaaaa'}
+# {:msg => 'aaaaa'}
