@@ -6,7 +6,7 @@ window.$ = jquery
 // .inactive-heartをクリックしたらcreateメソッドを呼び出し、active-heartを表示させる
 const listenInactiveHeartEvent = (articleId) => {
   $('.inactive-heart').on('click', () => {
-    axios.post(`/articles/${articleId}/like`)
+    axios.post(`/api/articles/${articleId}/like`)
       .then((response) => {
         console.log(response)
         if (response.data.status == 'OK') {
@@ -23,7 +23,7 @@ const listenInactiveHeartEvent = (articleId) => {
 // .active-heartをクリックしたらdeleteメソッドを呼び出し、inactive-heartを表示させる
 const listenActiveHeartEvent = (articleId) => {
   $('.active-heart').on('click', () => {
-    axios.delete(`/articles/${articleId}/like`)
+    axios.delete(`/api/articles/${articleId}/like`)
       .then((response) => {
         if (response.data.status == 'OK') {
           $('.active-heart').addClass('hidden')
