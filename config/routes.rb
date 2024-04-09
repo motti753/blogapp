@@ -26,20 +26,26 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   root to: 'articles#index'
-  resource :timeline, only: [:show]
 
   # resources :articles
-  resources :articles do
+  resources :articles
     # resources :articlesの中に「resources :comments」でURL「articles/id/new」となる
-    resources :comments, only: [:index, :new, :create]
-    resource :like, only: [:show, :create, :destroy]
-  end
 
   resources :accounts, only: [:show] do
     resources :follows, only: [:create]
     resources :unfollows, only: [:create]
   end
 
-  resource :profile, only: [:show, :edit, :update]
-  resources :favorites, only: [:index]
+  namespace :api, defaults: {format: :json} do
+    scope '/articles/:article_id' do
+      resources :comments, only: [:index, :create]
+      resource :like, only: [:show, :create, :destroy]
+    end
+  end
+
+  scope module: :apps do
+    resources :favorites, only: [:index]
+    resource :profile, only: [:show, :edit, :update]
+    resource :timeline, only: [:show]
+  end
 end
