@@ -75,6 +75,7 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'derailed'
   gem 'faker'
+  gem 'rspec-rails'
 end
 
 group :development do
