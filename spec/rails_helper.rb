@@ -63,5 +63,8 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 
+  # ModelダミーデータにFactorybotを使用する
   config.include FactoryBot::Syntax::Methods
+  # Controllerのrequestメソッドのテストで、Deviseを使用する
+  config.include Devise::Test::IntegrationHelpers, type: :request
 end
