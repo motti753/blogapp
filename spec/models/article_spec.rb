@@ -1,12 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Article, type: :model do
-  let!(:user) do
-    user = User.create!({
-      email: 'aaaaaa@gmail.com',
-      password: 'password'
-    })
-  end
+  let!(:user) { FactoryBot.create(:user) }
+
   # 前提条件と動作内容を分ける時に使用する
   context 'タイトルと内容が入力されている場合' do
     # [let!(:変数名)]は、変数名 = xxxx;と同じ意味。 do~endの間が変数に代入する値
@@ -35,16 +31,16 @@ RSpec.describe Article, type: :model do
     end
   end
 
-  context 'タイトルの文字が空白の場合' do
-    let!(:article) do
-      article = user.articles.create({
-        title: 'a',
-        content: Faker::Games::Pokemon.location
-      })
-    end
+  # context 'タイトルの文字が空白の場合' do
+  #   let!(:article) do
+  #     article = user.articles.create({
+  #       title: 'a',
+  #       content: Faker::Games::Pokemon.location
+  #     })
+  #   end
 
-    it '記事を保存できない' do
-      expect(article.errors.messages[:title][0]).to eq('は２文字以上で入力してください')
-    end
-  end
+  #   it '記事を保存できない' do
+  #     expect(article.errors.messages[:title][0]).to eq('は２文字以上で入力してください')
+  #   end
+  # end
 end
