@@ -13,9 +13,9 @@
 #  index_articles_on_user_id  (user_id)
 #
 class Article < ApplicationRecord
-  # validates :title, presence: true, length: { minimum: 2, maximun: 100},
-  # format: {with: /\A(?!\@)/}
-  # validates :title, length: { minimum: 2}
+  validates :title, presence: true, length: { minimum: 2, maximun: 100},
+  format: {with: /\A(?!\@)/}
+  validates :title, length: { minimum: 2}
 
   # validates :content, presence: true, length: {minimum: 5}, uniqueness: true
   # validates :content, length: {minimum: 10}
