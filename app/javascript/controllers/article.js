@@ -27,8 +27,9 @@ const handleCommentForm = () => {
 }
 
 const appendNewComment = (comment) => {
+  var com = `${comment.content}`
   $('.comments-container').append(
-    `<div class='article_comment'><p>${comment.content}</p></div>`
+    `<div class='article_comment'><p>${escape(com)}</p></div>`
   )
 }
 // comment ------------------------------ //
